@@ -1,1 +1,47 @@
 /* Your SCSS here. */
+body {
+    margin: 0;
+}
+
+header {
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+}
+
+.navbar {
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+    width: 100%;
+        
+    background-color: rgb(250, 234, 171);
+
+    &__title{
+        margin: 0 1rem;
+        font-size: 24px;
+    }
+
+    &__items{
+        display: flex;
+        gap: 1rem;
+        margin: 0 1rem;
+
+        
+        a{
+            text-decoration: none;
+            color: hsl(212, 90%, 40%);
+
+            &:hover{
+                color: hsl(212, 90%, 75%);
+                text-decoration: underline;
+                transition-duration: 500ms;
+            }
+        }
+    }
+}
