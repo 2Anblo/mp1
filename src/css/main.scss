@@ -19,10 +19,12 @@ header {
 
 
     width: 100%;
+    height: 60px;
         
-    background-color: rgb(250, 234, 171);
+    background-color: rgba(0, 0, 0, 0.801);
 
     &__title{
+        color: white;
         margin: 0 1rem;
         font-size: 24px;
     }
@@ -35,13 +37,65 @@ header {
         
         a{
             text-decoration: none;
-            color: hsl(212, 90%, 40%);
+            color: hsl(210, 100%, 99%);
 
             &:hover{
-                color: hsl(212, 90%, 75%);
+                color: hsl(212, 14%, 75%);
                 text-decoration: underline;
                 transition-duration: 500ms;
             }
+        }
+    }
+}
+
+
+.hero{
+    position: relative;
+    min-height: 100vh ;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    overflow: hidden;
+    padding: 0 8%;
+
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        z-index: -1;
+    }
+
+    &__overlay{
+        position: absolute;
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.2);
+
+        z-index: -1;
+    }
+
+    &__content {
+        margin-right: 10%;
+        max-width: 600px;
+
+        color: white;
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
         }
     }
 }
