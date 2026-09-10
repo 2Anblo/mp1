@@ -22,3 +22,13 @@ window.addEventListener("scroll", () => {
     );
   });
 });
+
+
+// resize navbar
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 60){
+        navbar.classList.add("scrolled")
+    } else{
+        navbar.classList.remove("scrolled")
+    }
+})

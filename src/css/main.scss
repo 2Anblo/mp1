@@ -1,4 +1,10 @@
 /* Your SCSS here. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
@@ -23,10 +29,17 @@ header {
         
     background-color: rgba(0, 0, 0, 0.801);
 
+    transition:
+        height 300ms ease,
+        padding 300ms ease,
+        background-color 300ms ease;
+
     &__title{
         color: white;
         margin: 0 1rem;
         font-size: 24px;
+
+        transition: font-size 300ms ease;
     }
 
     &__items{
@@ -34,10 +47,17 @@ header {
         gap: 1rem;
         margin: 0 1rem;
 
-        
+        transition: gap 300ms ease;
+
+
         a{
             text-decoration: none;
             color: hsl(210, 100%, 99%);
+            font-size: 17px;
+
+            transition:
+                color 300ms ease,
+                font-size 300ms ease;
 
             &:hover{
                 color: hsl(212, 14%, 75%);
@@ -52,6 +72,25 @@ header {
                 font-style: italic;
             }
         }
+    }
+
+    &.scrolled {
+
+        height: 45px;
+        padding: 0 0.8rem;
+
+        .navbar__title {
+            font-size: 20px;
+        }
+
+        .navbar__items {    
+            gap: 0.8rem;
+            
+            a {
+                font-size: 14px;
+            }
+        }
+
     }
 }
 
