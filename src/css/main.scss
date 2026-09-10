@@ -44,6 +44,13 @@ header {
                 text-decoration: underline;
                 transition-duration: 500ms;
             }
+
+            &.active {
+                color: cornflowerblue;
+                text-decoration: solid;
+                transition-duration: 500ms;
+                font-style: italic;
+            }
         }
     }
 }
@@ -101,16 +108,16 @@ header {
 }
 
 .about{
-    min-height: 70vh;
+    min-height: 100vh;
     padding: 5rem 8%;
 }
 
 .services{
-    min-height: 70vh;
+    min-height: 100vh;
     padding: 5rem 8%;
 }
 
 .contact{
-    min-height: 70vh;
+    min-height: 100vh;
     padding: 5rem 8%;
 }
