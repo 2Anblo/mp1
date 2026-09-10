@@ -155,6 +155,28 @@ header {
 .about{
     min-height: 100vh;
     padding: 5rem 8%;
+
+    background-color: black;
+    color: white;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    align-items: center;
+
+    &__column {
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    }
+
 }
 
 .services{
