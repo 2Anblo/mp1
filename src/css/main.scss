@@ -351,6 +351,33 @@ header {
 
 }
 
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 8%;
+    background: black;
+    color: white;
+
+    &__socials {
+        display: flex;
+        gap: 1.25rem;
+
+        a {
+            color: white;
+            font-size: 1.25rem;
+            transition: color 400ms ease,
+                    transform 400ms ease;
+            
+            &:hover {
+                color: rgb(138, 137, 135);
+                transform: translateY(-3px);
+            }
+        }
+    }
+}
+
 
 section:not(.hero) {
     scroll-margin-top: 45px;
