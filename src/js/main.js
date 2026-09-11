@@ -3,7 +3,13 @@ const sections = document.querySelectorAll("section")
 const navLinks = document.querySelectorAll(".navbar__items a")
 const navbar = document.querySelector(".navbar");
 const navbarHeight = navbar.offsetHeight;
+const track = document.querySelector(".about__carousel-track")
+const images = document.querySelectorAll(".about__carousel-track img")
+const leftButton = document.querySelector(".about__carousel-button--left")
+const rightButton = document.querySelector(".about__carousel-button--right")
 
+
+// section indicator
 window.addEventListener("scroll", () => {
   let currentSection = "";
 
@@ -31,4 +37,27 @@ window.addEventListener("scroll", () => {
     } else{
         navbar.classList.remove("scrolled")
     }
+})
+
+// carousel animation
+let currentIndex = 0;
+
+function updateCarousel(){
+  track.style.transform = `translateX(-${currentIndex*100}%)`;
+}
+
+rightButton.addEventListener("click", ()=>{
+  currentIndex++;
+  if(currentIndex>=images.length){
+    currentIndex = 0;
+  }
+  updateCarousel();
+})
+
+leftButton.addEventListener("click", ()=>{
+  currentIndex--;
+  if(currentIndex<0){
+    currentIndex = images.length - 1;
+  }
+  updateCarousel();
 })
