@@ -182,6 +182,31 @@ header {
 .services{
     min-height: 100vh;
     padding: 5rem 8%;
+
+    position: relative;
+
+    background-image: url("../assets/services_background.png");
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &__content {
+        z-index: 1;
+        position: relative;
+    }
 }
 
 .contact{
