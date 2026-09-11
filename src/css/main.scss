@@ -183,7 +183,14 @@ header {
     min-height: 100vh;
     padding: 5rem 8%;
 
-    position: relative;
+
+}
+
+.contact{
+    min-height: 100vh;
+    padding: 5rem 8%;
+
+        position: relative;
 
     background-image: url("../assets/services_background.png");
     background-size: cover;
@@ -207,11 +214,6 @@ header {
         z-index: 1;
         position: relative;
     }
-}
-
-.contact{
-    min-height: 100vh;
-    padding: 5rem 8%;
 }
 
 section:not(.hero) {
