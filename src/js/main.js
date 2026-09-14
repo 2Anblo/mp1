@@ -11,17 +11,30 @@ const modals = document.querySelectorAll(".modal");
 const cards = document.querySelectorAll(".services__card");
 const closeButtons = document.querySelectorAll(".modal__close");
 
+
+
 // section indicator
-window.addEventListener("scroll", () => {
-  let currentSection = "";
+
+function updateActiveSection(){
+    let currentSection = "";
+    const navbarBottom = navbar.getBoundingClientRect().bottom;
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
+    const sectionTop = section.getBoundingClientRect().top;
 
-    if (window.scrollY + navbarHeight >= sectionTop) {
+
+    if (sectionTop <= navbarBottom ) {
       currentSection = section.id;
     }
   });
+
+    const atBottom =
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight - 1;
+
+  if (atBottom && sections.length > 0) {
+    currentSection = sections[sections.length - 1].id;
+  }
 
   navLinks.forEach((link) => {
     link.classList.toggle(
@@ -29,8 +42,18 @@ window.addEventListener("scroll", () => {
       link.getAttribute("href") === `#${currentSection}`
     );
   });
+}
+
+window.addEventListener("scroll", updateActiveSection);
+window.addEventListener("resize", updateActiveSection);
+
+navbar.addEventListener("transitionend", (event) => {
+  if (event.target === navbar && event.propertyName === "height") {
+    updateActiveSection();
+  }
 });
 
+updateActiveSection();
 
 // resize navbar
 window.addEventListener("scroll", () => {
@@ -82,8 +105,8 @@ closeButtons.forEach((button) => {
 })
 
 modals.forEach((modal) =>{
-  modal.addEventListener("click", ()=>{
-    if (event.target == modal){
+  modal.addEventListener("click", (event)=>{
+    if (event.target === modal){
       modal.classList.remove("active")
     }
   })
