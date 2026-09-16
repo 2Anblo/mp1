@@ -4,6 +4,10 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        >
         <title>MP1</title>
     </head>
     <body>
@@ -11,6 +15,7 @@
             <nav class="navbar">
                 <h1 class="navbar__title">Taxi Driver</h1>
                 <div class="navbar__items">
+                    <a href="#hero">Home</a>
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
                     <a href="#contact">Contact</a>
@@ -19,7 +24,7 @@
         </header>
 
         <main>
-            <section class="hero">
+            <section id="hero" class="hero">
                 <video class="hero__video" autoplay muted loop playsinline>
                     <source src="fc5d15ad32f5397248b2.mp4" type="video/mp4">
                 </video>
@@ -32,19 +37,135 @@
                     <p>A taxi driver lives in NYC</p>
                 </div>
             </section>
-            <section class="about">
-                <p>My name is Travis</p>
+            <section id="about" class="about">
+
+                <div class="about__carousel">
+                    <button class="about__carousel-button about__carousel-button--left">
+                        &#10094;
+                    </button>    
+                    <div class="about__carousel-track">
+                        <img src="81e536d73005e2711db5.png" alt="About image 1">
+                        <img src="4bfef39274389faab54c.png" alt="About image 2">
+                        <img src="d6babfece013b3cda7b1.png" alt="About image 3">
+                    </div>
+                    <button class="about__carousel-button about__carousel-button--right">
+                        &#10095;
+                    </button>    
+                </div>
+
+                <div class="about__columns">
+                    <div class="about__column">
+                        <h2>Who I Am</h2>
+                        <p>
+                        My name is Travis Bickle. I’m a former Marine, now driving a cab in New York City.
+                        </p>
+                    </div>
+
+                    <div class="about__column">
+                        <h2>Why I Drive</h2>
+                        <p>
+                        I have trouble sleeping, so I work long nights behind the wheel. The streets give me somewhere to go.
+                        </p>
+                    </div>
+
+                    <div class="about__column">
+                        <h2>What I See</h2>
+                        <p>
+                        From my cab, I watch people come and go. I’m surrounded by a city full of life, but I still feel alone.
+                        </p>
+                    </div>
+                </div>
             </section>
-            <section class="services">
-                <p>I am a taxi driver</p>
+            <section id="services" class="services">
+                <div class="services__grid">
+                    <button class="services__card" data-modal="modal-1">
+                        <img src="fa77c9336914f631126b.png" alt="Service 1">
+                        <span>Taxi Driver</span>
+                    </button>
+                    <button class="services__card" data-modal="modal-2">
+                        <img src="d0e7d56489d999677b4a.png" alt="Service 2">
+                        <span>Soldier / Killer</span>
+                    </button>
+                    <button class="services__card" data-modal="modal-3">
+                        <img src="7712ca4744eecb069fe1.png" alt="Service 3">
+                        <span>Voter</span>
+                    </button>
+                </div>
             </section>
-            <section class="contact">
-                <p>My number is 111-222-3333</p>
+            <section id="contact" class="contact">
+                <div class="contact__content">
+                    <h2>Contact Me</h2>
+
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <span class="contact__label">Phone</span>
+                            <a href="tel:1112223333">111-222-3333</a>
+                        </div>
+
+                        <div class="contact__item">
+                            <span class="contact__label">Email</span>
+                            <a href="mailto:zhanboc2@illinois.edu">
+                                zhanboc2@illinois.edu
+                            </a>
+                        </div>
+
+                        <div class="contact__item">
+                            <span class="contact__label">Address</span>
+                            <span>123 Main Street, Champaign, IL</span>
+                        </div>
+
+                        <div class="contact__item">
+                            <span class="contact__label">Hours</span>
+                            <span>Mon–Sun, 8:00 AM–10:00 PM</span>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 
-        <footer>
-            <p>Please contact me!</p>
+        <!-- Modals -->
+        <div class="modal" id="modal-1">
+            <div class="modal__content">
+                <button class="modal__close">&times;</button>
+
+                <h2>Taxi Driver</h2>
+                <p>Through the windshield, I watch the city I cannot connect with.</p>
+            </div>
+        </div>
+        <div class="modal" id="modal-2">
+            <div class="modal__content">
+                <button class="modal__close">&times;</button>
+
+                <h2>Soldier / Killer</h2>
+                <p>I’m a former Marine, turning my isolation into a violent mission of my own.</p>
+            </div>
+        </div>
+        <div class="modal" id="modal-3">
+            <div class="modal__content">
+                <button class="modal__close">&times;</button>
+
+                <h2>Voter</h2>
+                <p>I find myself drawn into a presidential campaign, but belonging remains out of reach.</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Zhanbo Chen. All rights reserved.</p>
+            <div class="footer__socials">
+                <a href="https://github.com/2Anblo"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://x.com/ZhanboChen210"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X / Twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
         </footer>
 
     <script defer src="bundle.js"></script></body>
