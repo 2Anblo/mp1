@@ -560,3 +560,29 @@ $tablet-width: 800px;
         aspect-ratio: 16 / 10;
     }
 }
+
+@media (max-width: 400px) {
+    .navbar,
+    .navbar.scrolled {
+        height: auto;
+        min-height: 60px;
+        padding: 0.4rem 0;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.2rem;
+
+        .navbar__title {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .navbar__items {
+            margin: 0;
+            gap: 0.65rem;
+
+            a {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
