@@ -67,24 +67,24 @@ window.addEventListener("scroll", () => {
 // carousel animation
 let currentIndex = 0;
 
-function updateCarousel(){
-  track.style.transform = `translateX(-${currentIndex*100}%)`;
+function updateCarousel(nextIndex){
+  if (currentIndex > 0) {
+    track.classList.remove(`about__carousel-track--slide-${currentIndex}`);
+  }
+
+  currentIndex = nextIndex;
+
+  if (currentIndex > 0) {
+    track.classList.add(`about__carousel-track--slide-${currentIndex}`);
+  }
 }
 
 rightButton.addEventListener("click", ()=>{
-  currentIndex++;
-  if(currentIndex>=images.length){
-    currentIndex = 0;
-  }
-  updateCarousel();
+  updateCarousel((currentIndex + 1) % images.length);
 })
 
 leftButton.addEventListener("click", ()=>{
-  currentIndex--;
-  if(currentIndex<0){
-    currentIndex = images.length - 1;
-  }
-  updateCarousel();
+  updateCarousel((currentIndex - 1 + images.length) % images.length);
 })
 
 

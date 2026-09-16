@@ -107,7 +107,8 @@ header {
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    text-align: center;
 
     overflow: hidden;
     padding: 0 8%;
@@ -135,7 +136,6 @@ header {
     }
 
     &__content {
-        margin-right: 10%;
         max-width: 600px;
 
         color: white;
@@ -180,6 +180,15 @@ header {
     &__carousel-track {
         display: flex;
         transition: transform 500ms ease;
+
+        &--slide-1 {
+            transform: translateX(-100%);
+        }
+
+        &--slide-2 {
+            transform: translateX(-200%);
+        }
+
         img {
             width: 100%;
             flex-shrink: 0;
@@ -449,7 +458,6 @@ $tablet-width: 800px;
     isolation: isolate;
 
     &__content {
-        margin-right: clamp(0rem, 5vw, 6rem);
         min-width: 0;
 
         h1 {
@@ -528,15 +536,6 @@ $tablet-width: 800px;
 }
 
 @media (max-width: $tablet-width) {
-    .hero {
-        justify-content: center;
-        text-align: center;
-
-        &__content {
-            margin-right: 0;
-        }
-    }
-
     .about__columns {
         grid-template-columns: 1fr;
         gap: 1rem;
