@@ -2,7 +2,6 @@
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".navbar__items a");
 const navbar = document.querySelector(".navbar");
-const navbarHeight = navbar.offsetHeight;
 const track = document.querySelector(".about__carousel-track");
 const images = document.querySelectorAll(".about__carousel-track img");
 const leftButton = document.querySelector(".about__carousel-button--left");
