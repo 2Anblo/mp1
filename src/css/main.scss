@@ -433,3 +433,120 @@ header {
 section:not(.hero) {
     scroll-margin-top: 45px;
 }
+// Fluid spacing keeps the layout comfortable from tablets to wide desktops.
+$page-width: 1440px;
+$tablet-width: 800px;
+
+.hero,
+.about,
+.services,
+.contact {
+    padding: clamp(2.5rem, 5vh, 5rem) max(5%, calc((100% - #{$page-width}) / 2));
+}
+
+.hero {
+    min-height: calc(100vh - 60px);
+    isolation: isolate;
+
+    &__content {
+        margin-right: clamp(0rem, 5vw, 6rem);
+        min-width: 0;
+
+        h1 {
+            font-size: clamp(2.75rem, 4vw, 4rem);
+        }
+
+        p {
+            font-size: clamp(1.15rem, 1.6vw, 1.5rem);
+        }
+    }
+}
+
+.about {
+    &__columns {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(1.25rem, 2.5vw, 3rem);
+    }
+
+    &__carousel {
+        margin-bottom: clamp(1.5rem, 4vh, 4rem);
+    }
+
+    &__carousel-track img {
+        display: block;
+        height: clamp(240px, 42vh, 450px);
+    }
+
+    &__column h2 {
+        font-size: clamp(1.5rem, 2.2vw, 2rem);
+    }
+}
+
+.services {
+    &__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(1rem, 2vw, 2rem);
+    }
+
+    &__card img {
+        height: clamp(220px, 23vw, 300px);
+    }
+}
+
+.contact {
+    &__content {
+        width: 100%;
+        max-width: 550px;
+        padding: clamp(1.5rem, 3vw, 3rem);
+    }
+
+    &__item > :last-child {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+.modal {
+    padding: 1rem;
+
+    &__content {
+        width: 100%;
+        max-width: 600px;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+
+        h2 {
+            padding-right: 2rem;
+        }
+    }
+}
+
+.footer {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 2rem max(5%, calc((100% - #{$page-width}) / 2));
+}
+
+@media (max-width: $tablet-width) {
+    .hero {
+        justify-content: center;
+        text-align: center;
+
+        &__content {
+            margin-right: 0;
+        }
+    }
+
+    .about__columns {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .about__column h2 {
+        margin-top: 0;
+    }
+
+    .services__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
